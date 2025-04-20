@@ -157,35 +157,31 @@
 
         <section id="certifications">
             <h2>Certifications</h2>
-            <div class="certifications-grid">
-                <div class="certificate-card" data-certificate="1.png">
+            <div class="certifications-container">
+                <div class="certificate-card" data-certificate="Picture 4.png" data-title="Problem Solving (Basic) – HackerRank" data-date="19 Dec, 2024" data-id="FAA970CE01">
                     <div class="certificate-image">
                         <img src="Picture 4.png" alt="HackerRank Certificate">
                     </div>
-                    <div class="certificate-content">
-                        <h3>Problem Solving – HackerRank</h3>
+                    <div class="certificate-overlay">
+                        <h3>Problem Solving (Basic) – HackerRank</h3>
                     </div>
                 </div>
-                <div class="certificate-card" data-certificate="2.png">
+                <div class="certificate-card" data-certificate="Picture3.png" data-title="Data Analysis with Tableau – Coursera" data-date="N/A" data-id="N/A">
                     <div class="certificate-image">
                         <img src="Picture3.png" alt="Tableau Certificate">
                     </div>
-                    <div class="certificate-content">
+                    <div class="certificate-overlay">
                         <h3>Data Analysis with Tableau – Coursera</h3>
                     </div>
                 </div>
-                <div class="certificate-card" data-certificate="3.png">
+                <div class="certificate-card" data-certificate="Picture 2.png" data-title="Understanding Cloud Fundamentals – LinkedIn Learning" data-date="N/A" data-id="N/A">
                     <div class="certificate-image">
                         <img src="Picture 2.png" alt="Cloud Fundamentals Certificate">
                     </div>
-                    <div class="certificate-content">
+                    <div class="certificate-overlay">
                         <h3>Understanding Cloud Fundamentals – LinkedIn Learning</h3>
                     </div>
                 </div>
-            </div>
-            <div class="certificate-expand">
-                <img src="" alt="Expanded Certificate" class="expanded-certificate">
-                <span class="close-certificate"><i class="fas fa-times"></i></span>
             </div>
         </section>
 
@@ -244,7 +240,7 @@
                         </div>
                         <div class="contact-text">
                             <h3>Email</h3>
-                            <a href="/cdn-cgi/l/email-protection#2b45415859191b1b1e6b4c464a424705484446"><span class="__cf_email__" data-cfemail="b39d998081c1c3c3c6b3949e929a9fdd909c9e">[email&#160;protected]</span></a>
+                            <a href="/cdn-cgi/l/email-protection#2b45415859191b1b1e6b4c464a424705484446"><span class="__cf_email__" data-cfemail="b39d998081c1c3c3c6b3949e929a9fdd909c9e">[email protected]</span></a>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -272,13 +268,23 @@
 
     <footer>
         <div class="footer-content">
-            <p class="copyright">&copy; 2025 Jaswanth Reddy Nallapareddy. All Rights Reserved.</p>
+            <p class="copyright">© 2025 Jaswanth Reddy Nallapareddy. All Rights Reserved.</p>
         </div>
     </footer>
 
     <a href="#" class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
     </a>
+
+    <div class="certificate-modal">
+        <div class="modal-content">
+            <span class="close-modal">×</span>
+            <img src="" alt="Certificate" class="modal-image">
+            <div class="modal-details">
+                <h3 class="modal-title"></h3>
+            </div>
+        </div>
+    </div>
 
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script>
@@ -356,36 +362,44 @@
         window.addEventListener('scroll', animateOnScroll);
         window.addEventListener('load', animateOnScroll);
 
-        // Certificate expansion functionality
+        // Certificate modal functionality
         const certificateCards = document.querySelectorAll('.certificate-card');
-        const expandOverlay = document.querySelector('.certificate-expand');
-        const expandedImage = document.querySelector('.expanded-certificate');
-        const closeBtn = document.querySelector('.close-certificate');
+        const certificateModal = document.querySelector('.certificate-modal');
+        const modalImage = document.querySelector('.modal-image');
+        const modalTitle = document.querySelector('.modal-title');
+        const closeModal = document.querySelector('.close-modal');
 
         certificateCards.forEach(card => {
             card.addEventListener('click', function() {
                 const certImage = this.getAttribute('data-certificate');
-                expandedImage.src = certImage;
-                expandOverlay.classList.add('active');
+                const certTitle = this.getAttribute('data-title');
+
+                modalImage.src = certImage;
+                modalImage.alt = certTitle;
+                modalTitle.textContent = certTitle;
+                certificateModal.style.display = 'flex';
                 document.body.style.overflow = 'hidden';
             });
         });
 
-        closeBtn.addEventListener('click', function() {
-            expandOverlay.classList.remove('active');
+        closeModal.addEventListener('click', function() {
+            certificateModal.style.display = 'none';
+            modalImage.src = '';
             document.body.style.overflow = '';
         });
 
-        expandOverlay.addEventListener('click', function(e) {
+        certificateModal.addEventListener('click', function(e) {
             if (e.target === this) {
-                this.classList.remove('active');
+                this.style.display = 'none';
+                modalImage.src = '';
                 document.body.style.overflow = '';
             }
         });
 
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && expandOverlay.classList.contains('active')) {
-                expandOverlay.classList.remove('active');
+            if (e.key === 'Escape' && certificateModal.style.display === 'flex') {
+                certificateModal.style.display = 'none';
+                modalImage.src = '';
                 document.body.style.overflow = '';
             }
         });
