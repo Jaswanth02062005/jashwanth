@@ -18,7 +18,7 @@
                 <div class="social-links">
                     <a href="https://www.linkedin.com/in/jaswanth-reddy-nallapareddy" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                     <a href="https://github.com/Jaswanth02062005" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="mailto:njsr2005@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a href="/cdn-cgi/l/email-protection#1c72766f6e2e2c2c295c7b717d7570327f7371"><i class="fas fa-envelope"></i></a>
                     <a href="tel:+919014636588"><i class="fas fa-phone"></i></a>
                 </div>
                 <a href="#contact" class="submit-btn">Get in Touch</a>
@@ -137,7 +137,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-image">
                         <i class="fas fa-envelope" style="font-size: 3rem; color: var(--primary);"></i>
@@ -153,81 +152,42 @@
                         </div>
                     </div>
                 </div>
-                
             </div>
         </section>
 
-        
-
-         <section id="certifications">
-        <h2>Certifications</h2>
-        <div class="certifications-grid">
-            <div class="certificate-card" data-certificate="1.png">
-                <div class="certificate-image">
-                    <img src="Picture 4.png" alt="HackerRank Certificate">
+        <section id="certifications">
+            <h2>Certifications</h2>
+            <div class="certifications-grid">
+                <div class="certificate-card" data-certificate="1.png">
+                    <div class="certificate-image">
+                        <img src="Picture 4.png" alt="HackerRank Certificate">
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Problem Solving – HackerRank</h3>
+                    </div>
                 </div>
-                <div class="certificate-content">
-                    <h3>Problem Solving – HackerRank</h3>
+                <div class="certificate-card" data-certificate="2.png">
+                    <div class="certificate-image">
+                        <img src="Picture3.png" alt="Tableau Certificate">
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Data Analysis with Tableau – Coursera</h3>
+                    </div>
+                </div>
+                <div class="certificate-card" data-certificate="3.png">
+                    <div class="certificate-image">
+                        <img src="Picture 2.png" alt="Cloud Fundamentals Certificate">
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Understanding Cloud Fundamentals – LinkedIn Learning</h3>
+                    </div>
                 </div>
             </div>
-            <div class="certificate-card" data-certificate="2.png">
-                <div class="certificate-image">
-                    <img src="Picture3.png" alt="Tableau Certificate">
-                </div>
-                <div class="certificate-content">
-                    <h3>Data Analysis with Tableau – Coursera</h3>
-                </div>
+            <div class="certificate-expand">
+                <img src="" alt="Expanded Certificate" class="expanded-certificate">
+                <span class="close-certificate"><i class="fas fa-times"></i></span>
             </div>
-            <div class="certificate-card" data-certificate="3.png">
-                <div class="certificate-image">
-                    <img src="Picture 2.png" alt="Cloud Fundamentals Certificate">
-                </div>
-                <div class="certificate-content">
-                    <h3>Understanding Cloud Fundamentals – LinkedIn Learning</h3>
-                </div>
-            </div
-        </div>
-    </section>
-
-    <!-- Previous JavaScript remains the same, add this new script -->
-    <script>
-        // Certificate expansion functionality
-        const certificateCards = document.querySelectorAll('.certificate-card');
-        const expandOverlay = document.querySelector('.certificate-expand');
-        const expandedImage = document.querySelector('.expanded-certificate');
-        const closeBtn = document.querySelector('.close-certificate');
-
-        certificateCards.forEach(card => {
-            card.addEventListener('click', function() {
-                const certImage = this.getAttribute('data-certificate');
-                expandedImage.src = certImage;
-                expandOverlay.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Prevent scrolling
-            });
-        });
-
-        closeBtn.addEventListener('click', function() {
-            expandOverlay.classList.remove('active');
-            document.body.style.overflow = ''; // Re-enable scrolling
-        });
-
-        // Close when clicking outside image
-        expandOverlay.addEventListener('click', function(e) {
-            if (e.target === this) {
-                this.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
-
-        // Close with ESC key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && expandOverlay.classList.contains('active')) {
-                expandOverlay.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
-    </script>
-        
+        </section>
 
         <section id="achievements">
             <h2>Achievements</h2>
@@ -240,7 +200,8 @@
                         <h3>HackerRank 5-Star Coder</h3>
                         <p>Achieved 5-star ratings in Python, Java, and C programming on HackerRank, demonstrating strong problem-solving abilities and coding proficiency.</p>
                         <div class="achievement-image">
-                        <img src="ac.png" alt="HackerRank Achievement">                        </div>
+                            <img src="ac.png" alt="HackerRank Achievement">
+                        </div>
                     </div>
                 </li>
                 <li class="achievement-item">
@@ -252,7 +213,6 @@
                         <p>Led a district-level tourism development initiative under the Rayalaseema Tourism and Culture Society, resulting in official recognition and media coverage.</p>
                     </div>
                 </li>
-                
             </ul>
         </section>
 
@@ -284,7 +244,7 @@
                         </div>
                         <div class="contact-text">
                             <h3>Email</h3>
-                            <a href="mailto:njsr2005@gmail.com">njsr2005@gmail.com</a>
+                            <a href="/cdn-cgi/l/email-protection#2b45415859191b1b1e6b4c464a424705484446"><span class="__cf_email__" data-cfemail="b39d998081c1c3c3c6b3949e929a9fdd909c9e">[email&#160;protected]</span></a>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -320,6 +280,7 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script>
         // Mobile menu toggle
         const hamburger = document.querySelector('.hamburger');
@@ -394,6 +355,40 @@
 
         window.addEventListener('scroll', animateOnScroll);
         window.addEventListener('load', animateOnScroll);
+
+        // Certificate expansion functionality
+        const certificateCards = document.querySelectorAll('.certificate-card');
+        const expandOverlay = document.querySelector('.certificate-expand');
+        const expandedImage = document.querySelector('.expanded-certificate');
+        const closeBtn = document.querySelector('.close-certificate');
+
+        certificateCards.forEach(card => {
+            card.addEventListener('click', function() {
+                const certImage = this.getAttribute('data-certificate');
+                expandedImage.src = certImage;
+                expandOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        closeBtn.addEventListener('click', function() {
+            expandOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        expandOverlay.addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && expandOverlay.classList.contains('active')) {
+                expandOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
     </script>
 </body>
 </html>
